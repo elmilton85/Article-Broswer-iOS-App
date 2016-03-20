@@ -22,6 +22,7 @@
 		272B4F651C9B484300F91A37 /* YFArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F641C9B484300F91A37 /* YFArticleViewController.m */; };
 		272B4F6B1C9C7DC700F91A37 /* YFDetailArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F6A1C9C7DC700F91A37 /* YFDetailArticleModel.m */; };
 		272B4F6D1C9C8C1F00F91A37 /* detailArticles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F6C1C9C8C1F00F91A37 /* detailArticles.plist */; };
+		272B503B1C9F497100F91A37 /* YFArticleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B503A1C9F497100F91A37 /* YFArticleListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		272B4F691C9C7DC700F91A37 /* YFDetailArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFDetailArticleModel.h; sourceTree = "<group>"; };
 		272B4F6A1C9C7DC700F91A37 /* YFDetailArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFDetailArticleModel.m; sourceTree = "<group>"; };
 		272B4F6C1C9C8C1F00F91A37 /* detailArticles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = detailArticles.plist; sourceTree = "<group>"; };
+		272B50391C9F497100F91A37 /* YFArticleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFArticleListViewController.h; sourceTree = "<group>"; };
+		272B503A1C9F497100F91A37 /* YFArticleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFArticleListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 			children = (
 				272B4F421C99FCE800F91A37 /* ViewController.h */,
 				272B4F431C99FCE800F91A37 /* ViewController.m */,
+				272B50391C9F497100F91A37 /* YFArticleListViewController.h */,
+				272B503A1C9F497100F91A37 /* YFArticleListViewController.m */,
 				272B4F631C9B484300F91A37 /* YFArticleViewController.h */,
 				272B4F641C9B484300F91A37 /* YFArticleViewController.m */,
 			);
@@ -341,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				272B4F491C99FCE800F91A37 /* ViewController.m in Sources */,
+				272B503B1C9F497100F91A37 /* YFArticleListViewController.m in Sources */,
 				272B4F101C99FB5400F91A37 /* main.m in Sources */,
 				272B4F651C9B484300F91A37 /* YFArticleViewController.m in Sources */,
 				272B4F551C9A5F2E00F91A37 /* YFSliderView.m in Sources */,

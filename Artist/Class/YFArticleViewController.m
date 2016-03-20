@@ -11,7 +11,7 @@
 #import "constant.h"
 
 
-@interface YFArticleViewController () <UIScrollViewDelegate, UITabBarDelegate>
+@interface YFArticleViewController () <UIScrollViewDelegate, UITabBarDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong)UIScrollView *scrollView;
 @property (nonatomic, strong)UIImageView *topImageView;
 @property (nonatomic, strong)UILabel *titleLabel;
@@ -103,6 +103,10 @@
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 30, 30)];
     [btn setBackgroundImage:[UIImage imageNamed:@"back_icon"] forState:UIControlStateNormal];
     [self.view addSubview:btn];
+    
+    //gesture
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
 }
 
 #pragma mark - srollView delegate
@@ -117,7 +121,7 @@
 #pragma mark - tabBarItem delegate
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     if (item.tag == 0) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

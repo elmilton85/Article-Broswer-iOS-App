@@ -37,14 +37,17 @@ iMac产品线也受到了Intel芯片出货的严重影响，现阶段高端版�
 		<key>topImage</key>
 		<string>pic2</string>
 		<key>title</key>
-		<string>I love this keyboard!</string>
+		<string>What&apos;s New in iOS 9: New SDK Frameworks</string>
 		<key>body</key>
-		<string>随着苹果生产线的跟进，小编的Apple Pencil 和 Smart Keyboard已经到货了，在经过一个星期的使用之后，让我们来看看这两款为iPad Pro定制的专属配件有着怎样的表现。
-先来说说Apple Pencil，由于小编是个学生党，用Apple Pencil记笔记的感觉绝对不亚于纸与笔，我们发现，在iPad Pro的玻璃显示屏上，Apple Pencil使用起来会有滑的感觉，在贴上高透膜之后，这一情况得到了很好的改善。目前很多笔记应用也都支持了Apple Pencil，像Notability， Noteshelf等等都是小编强力推荐的。在画画方面，Apple pencil的表现出乎意料的好，以前小编有一款Paper 53出品的胡桃木绘画笔，同样在Paper软件中，Apple Pencil的准确度远胜Paper Pencil，唯一的缺憾，可能就是Apple Pencil并不自带擦除功能，需要在界面中点击橡皮擦，然后进行涂抹。电量方面，苹果宣称仅仅五分钟的充电就能为我们带来30分钟的使用时间，经过测试也确实如此，电量可以在iPad Pro的下拉状态栏中进行实时的查看，但是Apple Pencil的待机耗电也较快，对与强迫症的用户来说，每天看到状态栏里不断快速减少的电量，确实也很是头疼。
+		<string>At WWDC 2015, Apple introduced iOS 9. Although the new SDK does not introduce as many new or enhanced features as iOS 8, which included more than 4,000 new APIs, it does still provide a wealth of new functionality and enhancements. Along with the new SDK, iOS 9 is also marked by new developer tools to support some of its features, and new releases of Apple’s major programming languages, Swift and Objective-C.
 
-我们再来说说Smart Keyboard，169美元的价格对于一个键盘来说确实是不小的树木，究竟他值不值这么多钱呢，我们慢慢来说，首先，在工业设计上面，能把一个实体全尺寸键盘做的如此轻薄确实不易，iPad Pro 通过smart connector与Smart Keyboard进行连接，并且通过这个借口为键盘供电，键盘采用anti-splash的材质，不用担心水洒在上面了。键盘触感极佳，通过与Touch Cover的整合，在不适用的时候可以很好的收藏起来，同时，在观看电影的时候为你提供支撑，可惜的是，在打字时，键盘只支持一种角度的支撑。它的缺点也不少，首先，不支持背光，这让光线不好时的打字体验变得很糟糕，其次，功能键的缺乏，我无法用我的键盘来调节屏幕的亮度以及音量，这一点logitech的那款键盘就做的很好，第三，键盘敲击发出的声音略大。
+This series aims at introducing all that is essential for developers to know about building apps for the latest release of Apple’s mobile OS. It comprises five articles that will cover what’s new in iOS 9 SDK, new features in Swift, Objective-C, and developer tools, and Apple’s new bitcode.
 
-总的来说，这两款配件都是iPad Pro必不可少的，推荐给大家。</string>
+This InfoQ article is part of the series “IOS 9 For Developers ”. You can subscribe to receive notifications via RSS.
+
+ 
+
+At WWDC 2015, Apple introduced iOS 9. Although the new SDK does not introduce as many new or enhanced features as iOS 8, which included more than 4,000 new APIs, it does still provide a wealth of new functionality and enhancements. In this article, the first in a series focusing on iOS 9, we are going to review a number of new frameworks that Apple has included with its new mobile OS. This review is based on the documentation that Apple made available and on video sessions from WWDC 2015.</string>
 	</dict>
 	<dict>
 		<key>topImage</key>

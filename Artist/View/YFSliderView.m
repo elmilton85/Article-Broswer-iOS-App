@@ -86,12 +86,10 @@
 }
 
 - (void)updatePicture {
-    
-    self.pageControl.currentPage = (self.currIndex + 1)%kPageNumber;
-    
     [UIView animateWithDuration:0.5 animations:^{
         CGPoint newOffset = CGPointMake(kScreenWidth*2, 0);
         [self.scrollView setContentOffset:newOffset];
+        self.pageControl.currentPage = (self.currIndex + 1)%kPageNumber;
     } completion:^(BOOL finished) {
         //delete all pictures first
         [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
