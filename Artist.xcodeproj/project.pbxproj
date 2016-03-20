@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		272B4F101C99FB5400F91A37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F0F1C99FB5400F91A37 /* main.m */; };
-		272B4F131C99FB5400F91A37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F121C99FB5400F91A37 /* AppDelegate.m */; };
-		272B4F161C99FB5400F91A37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F151C99FB5400F91A37 /* ViewController.m */; };
 		272B4F191C99FB5400F91A37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F171C99FB5400F91A37 /* Main.storyboard */; };
 		272B4F1B1C99FB5400F91A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F1A1C99FB5400F91A37 /* Assets.xcassets */; };
 		272B4F1E1C99FB5400F91A37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F1C1C99FB5400F91A37 /* LaunchScreen.storyboard */; };
 		272B4F291C99FB5400F91A37 /* ArtistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F281C99FB5400F91A37 /* ArtistTests.m */; };
 		272B4F341C99FB5400F91A37 /* ArtistUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F331C99FB5400F91A37 /* ArtistUITests.m */; };
+		272B4F491C99FCE800F91A37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F431C99FCE800F91A37 /* ViewController.m */; };
+		272B4F4A1C99FCE800F91A37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F471C99FCE800F91A37 /* AppDelegate.m */; };
+		272B4F4D1C9A02D100F91A37 /* YFArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F4C1C9A02D100F91A37 /* YFArticleModel.m */; };
+		272B4F4F1C9A046B00F91A37 /* articles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F4E1C9A046B00F91A37 /* articles.plist */; };
+		272B4F521C9A09DC00F91A37 /* YFArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F511C9A09DC00F91A37 /* YFArticleCell.m */; };
+		272B4F551C9A5F2E00F91A37 /* YFSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F541C9A5F2E00F91A37 /* YFSliderView.m */; };
+		272B4F651C9B484300F91A37 /* YFArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F641C9B484300F91A37 /* YFArticleViewController.m */; };
+		272B4F6B1C9C7DC700F91A37 /* YFDetailArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F6A1C9C7DC700F91A37 /* YFDetailArticleModel.m */; };
+		272B4F6D1C9C8C1F00F91A37 /* detailArticles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F6C1C9C8C1F00F91A37 /* detailArticles.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +44,6 @@
 /* Begin PBXFileReference section */
 		272B4F0B1C99FB5400F91A37 /* Artist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272B4F0F1C99FB5400F91A37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		272B4F111C99FB5400F91A37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		272B4F121C99FB5400F91A37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		272B4F141C99FB5400F91A37 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		272B4F151C99FB5400F91A37 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		272B4F181C99FB5400F91A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		272B4F1A1C99FB5400F91A37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		272B4F1D1C99FB5400F91A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,23 @@
 		272B4F2F1C99FB5400F91A37 /* ArtistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		272B4F331C99FB5400F91A37 /* ArtistUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtistUITests.m; sourceTree = "<group>"; };
 		272B4F351C99FB5400F91A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		272B4F421C99FCE800F91A37 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		272B4F431C99FCE800F91A37 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		272B4F461C99FCE800F91A37 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		272B4F471C99FCE800F91A37 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		272B4F4B1C9A02D100F91A37 /* YFArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFArticleModel.h; sourceTree = "<group>"; };
+		272B4F4C1C9A02D100F91A37 /* YFArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFArticleModel.m; sourceTree = "<group>"; };
+		272B4F4E1C9A046B00F91A37 /* articles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = articles.plist; sourceTree = "<group>"; };
+		272B4F501C9A09DC00F91A37 /* YFArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFArticleCell.h; sourceTree = "<group>"; };
+		272B4F511C9A09DC00F91A37 /* YFArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFArticleCell.m; sourceTree = "<group>"; };
+		272B4F531C9A5F2E00F91A37 /* YFSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFSliderView.h; sourceTree = "<group>"; };
+		272B4F541C9A5F2E00F91A37 /* YFSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFSliderView.m; sourceTree = "<group>"; };
+		272B4F571C9A721900F91A37 /* constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
+		272B4F631C9B484300F91A37 /* YFArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFArticleViewController.h; sourceTree = "<group>"; };
+		272B4F641C9B484300F91A37 /* YFArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFArticleViewController.m; sourceTree = "<group>"; };
+		272B4F691C9C7DC700F91A37 /* YFDetailArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFDetailArticleModel.h; sourceTree = "<group>"; };
+		272B4F6A1C9C7DC700F91A37 /* YFDetailArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFDetailArticleModel.m; sourceTree = "<group>"; };
+		272B4F6C1C9C8C1F00F91A37 /* detailArticles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = detailArticles.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +121,10 @@
 		272B4F0D1C99FB5400F91A37 /* Artist */ = {
 			isa = PBXGroup;
 			children = (
-				272B4F111C99FB5400F91A37 /* AppDelegate.h */,
-				272B4F121C99FB5400F91A37 /* AppDelegate.m */,
-				272B4F141C99FB5400F91A37 /* ViewController.h */,
-				272B4F151C99FB5400F91A37 /* ViewController.m */,
-				272B4F171C99FB5400F91A37 /* Main.storyboard */,
-				272B4F1A1C99FB5400F91A37 /* Assets.xcassets */,
-				272B4F1C1C99FB5400F91A37 /* LaunchScreen.storyboard */,
-				272B4F1F1C99FB5400F91A37 /* Info.plist */,
+				272B4F441C99FCE800F91A37 /* Model */,
+				272B4F411C99FCE800F91A37 /* Class */,
+				272B4F481C99FCE800F91A37 /* View */,
+				272B4F451C99FCE800F91A37 /* Other */,
 				272B4F0E1C99FB5400F91A37 /* Supporting Files */,
 			);
 			path = Artist;
@@ -117,7 +133,13 @@
 		272B4F0E1C99FB5400F91A37 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				272B4F1F1C99FB5400F91A37 /* Info.plist */,
+				272B4F1C1C99FB5400F91A37 /* LaunchScreen.storyboard */,
+				272B4F1A1C99FB5400F91A37 /* Assets.xcassets */,
+				272B4F171C99FB5400F91A37 /* Main.storyboard */,
 				272B4F0F1C99FB5400F91A37 /* main.m */,
+				272B4F4E1C9A046B00F91A37 /* articles.plist */,
+				272B4F6C1C9C8C1F00F91A37 /* detailArticles.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +160,49 @@
 				272B4F351C99FB5400F91A37 /* Info.plist */,
 			);
 			path = ArtistUITests;
+			sourceTree = "<group>";
+		};
+		272B4F411C99FCE800F91A37 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				272B4F421C99FCE800F91A37 /* ViewController.h */,
+				272B4F431C99FCE800F91A37 /* ViewController.m */,
+				272B4F631C9B484300F91A37 /* YFArticleViewController.h */,
+				272B4F641C9B484300F91A37 /* YFArticleViewController.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		272B4F441C99FCE800F91A37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				272B4F4B1C9A02D100F91A37 /* YFArticleModel.h */,
+				272B4F4C1C9A02D100F91A37 /* YFArticleModel.m */,
+				272B4F691C9C7DC700F91A37 /* YFDetailArticleModel.h */,
+				272B4F6A1C9C7DC700F91A37 /* YFDetailArticleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		272B4F451C99FCE800F91A37 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				272B4F461C99FCE800F91A37 /* AppDelegate.h */,
+				272B4F471C99FCE800F91A37 /* AppDelegate.m */,
+				272B4F571C9A721900F91A37 /* constant.h */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		272B4F481C99FCE800F91A37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				272B4F501C9A09DC00F91A37 /* YFArticleCell.h */,
+				272B4F511C9A09DC00F91A37 /* YFArticleCell.m */,
+				272B4F531C9A5F2E00F91A37 /* YFSliderView.h */,
+				272B4F541C9A5F2E00F91A37 /* YFSliderView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +314,8 @@
 				272B4F1E1C99FB5400F91A37 /* LaunchScreen.storyboard in Resources */,
 				272B4F1B1C99FB5400F91A37 /* Assets.xcassets in Resources */,
 				272B4F191C99FB5400F91A37 /* Main.storyboard in Resources */,
+				272B4F4F1C9A046B00F91A37 /* articles.plist in Resources */,
+				272B4F6D1C9C8C1F00F91A37 /* detailArticles.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +340,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				272B4F161C99FB5400F91A37 /* ViewController.m in Sources */,
-				272B4F131C99FB5400F91A37 /* AppDelegate.m in Sources */,
+				272B4F491C99FCE800F91A37 /* ViewController.m in Sources */,
 				272B4F101C99FB5400F91A37 /* main.m in Sources */,
+				272B4F651C9B484300F91A37 /* YFArticleViewController.m in Sources */,
+				272B4F551C9A5F2E00F91A37 /* YFSliderView.m in Sources */,
+				272B4F4A1C99FCE800F91A37 /* AppDelegate.m in Sources */,
+				272B4F4D1C9A02D100F91A37 /* YFArticleModel.m in Sources */,
+				272B4F521C9A09DC00F91A37 /* YFArticleCell.m in Sources */,
+				272B4F6B1C9C7DC700F91A37 /* YFDetailArticleModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +571,7 @@
 				272B4F3A1C99FB5400F91A37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		272B4F3B1C99FB5400F91A37 /* Build configuration list for PBXNativeTarget "ArtistTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +580,7 @@
 				272B4F3D1C99FB5400F91A37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		272B4F3E1C99FB5400F91A37 /* Build configuration list for PBXNativeTarget "ArtistUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +589,7 @@
 				272B4F401C99FB5400F91A37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
