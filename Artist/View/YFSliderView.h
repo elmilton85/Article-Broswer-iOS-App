@@ -7,12 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+@class YFSliderView;
+@protocol YFSliderViewDelegate <NSObject>
+@optional
+- (void)sliderView:(YFSliderView *)sliderView didSelectIndex:(int)index;
+
+@end
 
 @interface YFSliderView : UITableViewHeaderFooterView
 
+@property (nonatomic,weak) id<YFSliderViewDelegate>delegate;
 @property (nonatomic,strong) NSTimer *timer;
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier;
-+ (instancetype)sliderWithTableView:(UITableView *)tableView;
++ (instancetype)sliderWithTableView:(UITableView *)tableView andArticleModels:(NSArray *)articleModelArray;
 - (void)startTimer;
 
 @end

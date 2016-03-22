@@ -15,16 +15,17 @@
 #import "YFArticleViewController.h"
 #import "constant.h"
 
-@interface YFArticleListViewController ()
+@interface YFArticleListViewController () <YFSliderViewDelegate>
 
 @property (nonatomic, strong) NSArray *articleArray;
-@property (nonatomic, strong) NSArray *detailArticleArray;
+@property (nonatomic, strong) NSArray *detailArticleArray;//contains dictionaries
+@property (nonatomic, strong) NSArray *pictureSliderRowIndexArray;
 @property (nonatomic,strong) YFSliderView *pictureSlider;
 
 @end
 
 @implementation YFArticleListViewController
-
+#pragma mark - properties lazy loading
 - (NSArray *)articleArray {
     if (_articleArray == nil) {
         NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"articles" ofType:@"plist"]];
@@ -44,6 +45,28 @@
     return _detailArticleArray;
 }
 
+- (NSArray *)pictureSliderRowIndexArray {
+    if (_pictureSliderRowIndexArray == nil) {
+        _pictureSliderRowIndexArray = [NSArray arrayWithObjects:@0, @1, @2, @3, @4, nil];
+    }
+    return _pictureSliderRowIndexArray;
+}
+
+- (YFSliderView *)pictureSlider {
+    if (_pictureSlider == nil) {
+        NSMutableArray *arrayM = [NSMutableArray array];
+        for (int i=0; i<self.pictureSliderRowIndexArray.count; i++) {
+            int modelIndex = [self.pictureSliderRowIndexArray[i] intValue];
+            [arrayM addObject:self.articleArray[modelIndex]];
+        }
+        _pictureSlider = [YFSliderView sliderWithTableView:self.tableView andArticleModels:arrayM];
+        _pictureSlider.delegate = self;
+    }
+    return  _pictureSlider;
+}
+
+#pragma mark - view methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -54,8 +77,8 @@
     self.tableView.rowHeight = kCellHeight;
     self.tableView.contentInset = UIEdgeInsetsMake(-80, 0, 0, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
+    
     //let the header view follow the cells to scroll
-    self.pictureSlider = [YFSliderView sliderWithTableView:self.tableView];
     self.tableView.tableHeaderView = self.pictureSlider;
 }
 
@@ -71,7 +94,11 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
 }
 
-#pragma mark - data source
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+#pragma mark - tableView data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -96,16 +123,14 @@
 //    return self.pictureSlider;
 //}
 
-#pragma mark - delegate
+#pragma mark - scrollView delegate
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.pictureSlider.timer invalidate];
-    NSLog(@"begin dragging");
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     [self.pictureSlider startTimer];
-    NSLog(@"end dragging");
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -114,6 +139,8 @@
         self.tableView.contentOffset = CGPointMake(0, 0);
     }
 }
+
+#pragma mark - tableView delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"select row %lu",indexPath.row);
@@ -125,6 +152,14 @@
 //        [self presentViewController:detailArticleController animated:YES completion:nil];
 //    });
     [self.navigationController pushViewController:detailArticleController animated:YES];
+}
+
+#pragma mark - sliderView delegate
+
+- (void)sliderView:(YFSliderView *)sliderView didSelectIndex:(int)index {
+    int row = [self.pictureSliderRowIndexArray[index] intValue];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
 }
 
 - (void)didReceiveMemoryWarning {

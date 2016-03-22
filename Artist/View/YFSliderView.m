@@ -8,13 +8,15 @@
 
 #import "YFSliderView.h"
 #import "constant.h"
+#import "YFArticleModel.h"
 
 #define kPageNumber 5
 
 @interface YFSliderView () <UIScrollViewDelegate, UIPageViewControllerDelegate>
 
-@property (nonatomic, strong)UIScrollView *scrollView;
-@property (nonatomic,strong) UIPageControl *pageControl;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, strong) NSArray *articleModels;
 @property (nonatomic,assign) int currIndex;
 
 @end
@@ -39,16 +41,19 @@
         _pageControl = [[UIPageControl alloc] init];
         _pageControl.numberOfPages = kPageNumber;
         CGSize size = [_pageControl sizeForNumberOfPages:kPageNumber];
-        _pageControl.frame = (CGRect){{(self.bounds.size.width - size.width)*0.5,kScrollViewHeight-40},size};
+        _pageControl.frame = (CGRect){{(self.bounds.size.width - size.width)*0.5,kScrollViewHeight-30},size};
     }
     return _pageControl;
 }
 
-+ (instancetype)sliderWithTableView:(UITableView *)tableView {
+
++ (instancetype)sliderWithTableView:(UITableView *)tableView andArticleModels:(NSArray *)articleModelArray {
     NSString *ID = @"Header";
     YFSliderView *pictureSlider = [tableView dequeueReusableHeaderFooterViewWithIdentifier:ID];
     if (pictureSlider == nil) {
         pictureSlider = [[YFSliderView alloc] initWithReuseIdentifier:ID];
+        pictureSlider.articleModels = [NSArray arrayWithArray:articleModelArray];
+        [pictureSlider loadPictures];
     }
     return pictureSlider;
 }
@@ -58,11 +63,13 @@
         self.frame = CGRectMake(0, 0, kScreenWidth, kScrollViewHeight);
         //add scrollView
         [self addSubview:self.scrollView];
-        //add pictures to the scrollview
-        [self loadPictures];
         
+        //add pageControl
         [self addSubview:self.pageControl];
         
+        self.currIndex = 0;
+        
+        //start NSTimer
         [self startTimer];
     }
     return self;
@@ -70,12 +77,33 @@
 
 - (void)loadPictures {
     for (int i=0; i<3; i++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i*kScreenWidth, 0, kScreenWidth, kScrollViewHeight)];
-        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"pic%d",(self.currIndex+i-1+kPageNumber)%kPageNumber]];
-        [self.scrollView addSubview:imageView];
+        UIButton *imageButton = [[UIButton alloc] initWithFrame:CGRectMake(i*kScreenWidth, 0, kScreenWidth, kScrollViewHeight)];
+        //get the current article model
+        YFArticleModel *currArticle = self.articleModels[(self.currIndex+i-1+kPageNumber)%kPageNumber];
+        
+        //set image for the button
+        [imageButton setBackgroundImage:[UIImage imageNamed:currArticle.picture] forState:UIControlStateNormal];
+        imageButton.adjustsImageWhenHighlighted = NO;
+        [imageButton addTarget:self action:@selector(pictureClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.scrollView addSubview:imageButton];
+        
+        
+        CGSize size = [currArticle.name boundingRectWithSize:CGSizeMake(kScreenWidth - 20, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18.0]} context:nil].size;
+        CGRect frame = (CGRect){{10, self.scrollView.bounds.size.height - 20 - size.height}, size};
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:frame];
+        titleLabel.numberOfLines = 0;
+        titleLabel.text = currArticle.name;
+        titleLabel.textColor = [UIColor whiteColor];
+        [imageButton addSubview:titleLabel];
     }
-    NSLog(@"%d",self.currIndex);
     self.scrollView.contentOffset = CGPointMake(kScreenWidth, 0);
+}
+
+- (void)pictureClick {
+    //check if the delegate method is implemented by controller
+    if ([self.delegate respondsToSelector:@selector(sliderView:didSelectIndex:)]) {
+        [self.delegate sliderView:self didSelectIndex:self.currIndex];
+    }
 }
 
 - (void)startTimer {

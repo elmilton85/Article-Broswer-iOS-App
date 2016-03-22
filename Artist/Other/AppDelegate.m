@@ -18,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    /** 
+     Since I don't use a xib to initial the rootViewController, it will automatically do
+     rootViewController.view = [[UIView alloc] init]
+     */
     YFArticleListViewController *rootViewController = [[YFArticleListViewController alloc] init];
     UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     naviController.navigationBarHidden = YES;

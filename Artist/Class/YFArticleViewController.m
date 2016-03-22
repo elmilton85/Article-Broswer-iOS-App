@@ -11,12 +11,12 @@
 #import "constant.h"
 
 
-@interface YFArticleViewController () <UIScrollViewDelegate, UITabBarDelegate, UIGestureRecognizerDelegate>
+@interface YFArticleViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong)UIScrollView *scrollView;
 @property (nonatomic, strong)UIImageView *topImageView;
 @property (nonatomic, strong)UILabel *titleLabel;
 @property (nonatomic, strong)UILabel *bodyLabel;
-@property (nonatomic,strong) UITabBar *tabBar;
+@property (nonatomic,strong) UIToolbar *toolBar;
 
 @property (nonatomic, strong)YFDetailArticleModel *articleModel;
 @end
@@ -35,7 +35,7 @@
         _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
         CGFloat contentH = CGRectGetMaxY(self.topImageView.frame) + 20 + self.titleLabel.bounds.size.height + 20 + self.bodyLabel.bounds.size.height;
         _scrollView.contentSize = CGSizeMake(0, contentH);
-        _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);
+        _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0);
         _scrollView.delegate = self;
         [self.view addSubview:_scrollView];
     }
@@ -75,30 +75,35 @@
     return _bodyLabel;
 }
 
-- (UITabBar *)tabBar {
-    if (_tabBar == nil) {
-        _tabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0, kScreenHeight - 44, kScreenWidth, 44)];
-        UITabBarItem *backItem = [[UITabBarItem alloc] initWithTitle:@"back" image:[UIImage imageNamed:@"back_icon"] tag:0];
-        UITabBarItem *likeItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:1];
-        _tabBar.items = [NSArray arrayWithObjects:backItem, likeItem, nil];
-        _tabBar.delegate = self;
+
+- (UIToolbar *)toolBar {
+    if (_toolBar == nil) {
+        _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, kScreenHeight-30, kScreenWidth, 30)];
+        
+        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonClick)];
+        _toolBar.items = @[backItem];
     }
-    return _tabBar;
+    return _toolBar;
+}
+
+- (void)backButtonClick {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)loadView {
     [super loadView];
-    UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    view.backgroundColor = [UIColor whiteColor];
-    self.view = view;
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self.scrollView addSubview:self.topImageView];
     [self.scrollView addSubview:self.titleLabel];
     [self.scrollView addSubview:self.bodyLabel];
-    [self.view addSubview:self.tabBar];
+//    [self.view addSubview:self.tabBar];
+    [self.view addSubview:self.toolBar];
+    [self.view bringSubviewToFront:self.topImageView];
     
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 30, 30)];
     [btn setBackgroundImage:[UIImage imageNamed:@"back_icon"] forState:UIControlStateNormal];
@@ -118,11 +123,5 @@
     }
 }
 
-#pragma mark - tabBarItem delegate
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    if (item.tag == 0) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
 
 @end
