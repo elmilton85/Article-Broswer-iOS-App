@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		272B4F101C99FB5400F91A37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F0F1C99FB5400F91A37 /* main.m */; };
-		272B4F191C99FB5400F91A37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F171C99FB5400F91A37 /* Main.storyboard */; };
 		272B4F1B1C99FB5400F91A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F1A1C99FB5400F91A37 /* Assets.xcassets */; };
 		272B4F1E1C99FB5400F91A37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F1C1C99FB5400F91A37 /* LaunchScreen.storyboard */; };
 		272B4F291C99FB5400F91A37 /* ArtistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F281C99FB5400F91A37 /* ArtistTests.m */; };
 		272B4F341C99FB5400F91A37 /* ArtistUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F331C99FB5400F91A37 /* ArtistUITests.m */; };
-		272B4F491C99FCE800F91A37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F431C99FCE800F91A37 /* ViewController.m */; };
 		272B4F4A1C99FCE800F91A37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F471C99FCE800F91A37 /* AppDelegate.m */; };
 		272B4F4D1C9A02D100F91A37 /* YFArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F4C1C9A02D100F91A37 /* YFArticleModel.m */; };
 		272B4F4F1C9A046B00F91A37 /* articles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F4E1C9A046B00F91A37 /* articles.plist */; };
@@ -23,6 +21,7 @@
 		272B4F6B1C9C7DC700F91A37 /* YFDetailArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B4F6A1C9C7DC700F91A37 /* YFDetailArticleModel.m */; };
 		272B4F6D1C9C8C1F00F91A37 /* detailArticles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 272B4F6C1C9C8C1F00F91A37 /* detailArticles.plist */; };
 		272B503B1C9F497100F91A37 /* YFArticleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272B503A1C9F497100F91A37 /* YFArticleListViewController.m */; };
+		276A06711CA2054100A76600 /* YFToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 276A06701CA2054100A76600 /* YFToolBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 /* Begin PBXFileReference section */
 		272B4F0B1C99FB5400F91A37 /* Artist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272B4F0F1C99FB5400F91A37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		272B4F181C99FB5400F91A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		272B4F1A1C99FB5400F91A37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		272B4F1D1C99FB5400F91A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		272B4F1F1C99FB5400F91A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,8 +53,6 @@
 		272B4F2F1C99FB5400F91A37 /* ArtistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		272B4F331C99FB5400F91A37 /* ArtistUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtistUITests.m; sourceTree = "<group>"; };
 		272B4F351C99FB5400F91A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		272B4F421C99FCE800F91A37 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		272B4F431C99FCE800F91A37 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		272B4F461C99FCE800F91A37 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		272B4F471C99FCE800F91A37 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		272B4F4B1C9A02D100F91A37 /* YFArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFArticleModel.h; sourceTree = "<group>"; };
@@ -74,6 +70,8 @@
 		272B4F6C1C9C8C1F00F91A37 /* detailArticles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = detailArticles.plist; sourceTree = "<group>"; };
 		272B50391C9F497100F91A37 /* YFArticleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFArticleListViewController.h; sourceTree = "<group>"; };
 		272B503A1C9F497100F91A37 /* YFArticleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFArticleListViewController.m; sourceTree = "<group>"; };
+		276A066F1CA2054100A76600 /* YFToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFToolBar.h; sourceTree = "<group>"; };
+		276A06701CA2054100A76600 /* YFToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFToolBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 				272B4F1F1C99FB5400F91A37 /* Info.plist */,
 				272B4F1C1C99FB5400F91A37 /* LaunchScreen.storyboard */,
 				272B4F1A1C99FB5400F91A37 /* Assets.xcassets */,
-				272B4F171C99FB5400F91A37 /* Main.storyboard */,
 				272B4F0F1C99FB5400F91A37 /* main.m */,
 				272B4F4E1C9A046B00F91A37 /* articles.plist */,
 				272B4F6C1C9C8C1F00F91A37 /* detailArticles.plist */,
@@ -168,8 +165,6 @@
 		272B4F411C99FCE800F91A37 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				272B4F421C99FCE800F91A37 /* ViewController.h */,
-				272B4F431C99FCE800F91A37 /* ViewController.m */,
 				272B50391C9F497100F91A37 /* YFArticleListViewController.h */,
 				272B503A1C9F497100F91A37 /* YFArticleListViewController.m */,
 				272B4F631C9B484300F91A37 /* YFArticleViewController.h */,
@@ -206,6 +201,8 @@
 				272B4F511C9A09DC00F91A37 /* YFArticleCell.m */,
 				272B4F531C9A5F2E00F91A37 /* YFSliderView.h */,
 				272B4F541C9A5F2E00F91A37 /* YFSliderView.m */,
+				276A066F1CA2054100A76600 /* YFToolBar.h */,
+				276A06701CA2054100A76600 /* YFToolBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,7 +315,6 @@
 			files = (
 				272B4F1E1C99FB5400F91A37 /* LaunchScreen.storyboard in Resources */,
 				272B4F1B1C99FB5400F91A37 /* Assets.xcassets in Resources */,
-				272B4F191C99FB5400F91A37 /* Main.storyboard in Resources */,
 				272B4F4F1C9A046B00F91A37 /* articles.plist in Resources */,
 				272B4F6D1C9C8C1F00F91A37 /* detailArticles.plist in Resources */,
 			);
@@ -345,7 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				272B4F491C99FCE800F91A37 /* ViewController.m in Sources */,
+				276A06711CA2054100A76600 /* YFToolBar.m in Sources */,
 				272B503B1C9F497100F91A37 /* YFArticleListViewController.m in Sources */,
 				272B4F101C99FB5400F91A37 /* main.m in Sources */,
 				272B4F651C9B484300F91A37 /* YFArticleViewController.m in Sources */,
@@ -389,14 +385,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		272B4F171C99FB5400F91A37 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				272B4F181C99FB5400F91A37 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		272B4F1C1C99FB5400F91A37 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
