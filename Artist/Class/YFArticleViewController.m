@@ -8,6 +8,7 @@
 
 #import "YFArticleViewController.h"
 #import "YFDetailArticleModel.h"
+#import "YFToolBar.h"
 #import "constant.h"
 
 
@@ -16,16 +17,19 @@
 @property (nonatomic, strong)UIImageView *topImageView;
 @property (nonatomic, strong)UILabel *titleLabel;
 @property (nonatomic, strong)UILabel *bodyLabel;
-@property (nonatomic,strong) UIToolbar *toolBar;
+@property (nonatomic, strong) YFToolBar *toolBar;
+
+@property (nonatomic, assign) BOOL isLiked;
 
 @property (nonatomic, strong)YFDetailArticleModel *articleModel;
 @end
 
 @implementation YFArticleViewController
 
-- (instancetype)initWithDetailArticleModel:(YFDetailArticleModel *)articleModel {
+- (instancetype)initWithDetailArticleModel:(YFDetailArticleModel *)articleModel andIsLiked:(BOOL)isLiked {
     if (self = [super init]) {
         _articleModel = articleModel;
+        _isLiked = isLiked;
     }
     return self;
 }
@@ -37,6 +41,7 @@
         _scrollView.contentSize = CGSizeMake(0, contentH);
         _scrollView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0);
         _scrollView.delegate = self;
+        _scrollView.backgroundColor = [UIColor colorWithWhite:0.97 alpha:1.0];
         [self.view addSubview:_scrollView];
     }
     return _scrollView;
@@ -70,18 +75,18 @@
         _bodyLabel.text = self.articleModel.body;
         _bodyLabel.font = [UIFont systemFontOfSize:14];
         _bodyLabel.numberOfLines = 0;
-        
     }
     return _bodyLabel;
 }
 
 
-- (UIToolbar *)toolBar {
+- (YFToolBar *)toolBar {
     if (_toolBar == nil) {
-        _toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, kScreenHeight-30, kScreenWidth, 30)];
-        
-        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(backButtonClick)];
-        _toolBar.items = @[backItem];
+        _toolBar = [[YFToolBar alloc] initWithFrame:CGRectMake(0, kScreenHeight-35, kScreenWidth, 35) andIndex:self.articleModel.index];
+        if (self.isLiked) {
+            [_toolBar.likeButton setSelected:YES];
+        }
+        [_toolBar.backButton addTarget:self action:@selector(backButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _toolBar;
 }
@@ -90,10 +95,6 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)loadView {
-    [super loadView];
-    self.view.backgroundColor = [UIColor whiteColor];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -101,7 +102,6 @@
     [self.scrollView addSubview:self.topImageView];
     [self.scrollView addSubview:self.titleLabel];
     [self.scrollView addSubview:self.bodyLabel];
-//    [self.view addSubview:self.tabBar];
     [self.view addSubview:self.toolBar];
     [self.view bringSubviewToFront:self.topImageView];
     

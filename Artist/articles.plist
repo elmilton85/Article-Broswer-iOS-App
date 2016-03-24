@@ -42,21 +42,5 @@
 		<key>date</key>
 		<string>30 Nov 2015</string>
 	</dict>
-	<dict>
-		<key>name</key>
-		<string>my article 444444444</string>
-		<key>picture</key>
-		<string>pic00</string>
-		<key>date</key>
-		<string>2016-03-16</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>my article 444444444</string>
-		<key>picture</key>
-		<string>pic00</string>
-		<key>date</key>
-		<string>2016-03-16</string>
-	</dict>
 </array>
 </plist>

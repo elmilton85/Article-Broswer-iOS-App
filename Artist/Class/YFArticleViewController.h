@@ -10,6 +10,6 @@
 @class YFDetailArticleModel;
 @interface YFArticleViewController : UIViewController
 
-- (instancetype)initWithDetailArticleModel:(YFDetailArticleModel *)articleModel;
+- (instancetype)initWithDetailArticleModel:(YFDetailArticleModel *)articleModel andIsLiked:(BOOL)isLiked;
 
 @end

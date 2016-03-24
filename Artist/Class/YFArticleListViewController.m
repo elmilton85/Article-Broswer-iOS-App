@@ -11,6 +11,7 @@
 #import "YFArticleModel.h"
 #import "YFArticleCell.h"
 #import "YFSliderView.h"
+#import "YFToolBar.h"
 #import "YFDetailArticleModel.h"
 #import "YFArticleViewController.h"
 #import "constant.h"
@@ -20,7 +21,8 @@
 @property (nonatomic, strong) NSArray *articleArray;
 @property (nonatomic, strong) NSArray *detailArticleArray;//contains dictionaries
 @property (nonatomic, strong) NSArray *pictureSliderRowIndexArray;
-@property (nonatomic,strong) YFSliderView *pictureSlider;
+@property (nonatomic, strong) NSMutableArray *likeStatus;
+@property (nonatomic, strong) YFSliderView *pictureSlider;
 
 @end
 
@@ -52,6 +54,16 @@
     return _pictureSliderRowIndexArray;
 }
 
+- (NSMutableArray *)liked {
+    if (_likeStatus == nil) {
+        _likeStatus = [NSMutableArray array];
+        for (int i=0; i<self.articleArray.count; i++) {
+            [_likeStatus addObject:@0];
+        }
+    }
+    return _likeStatus;
+}
+
 - (YFSliderView *)pictureSlider {
     if (_pictureSlider == nil) {
         NSMutableArray *arrayM = [NSMutableArray array];
@@ -71,6 +83,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configUI];
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(changeLikedArray:) name:@"LikeButtonClicked" object:nil];
 }
 
 - (void)configUI {
@@ -80,6 +95,13 @@
     
     //let the header view follow the cells to scroll
     self.tableView.tableHeaderView = self.pictureSlider;
+}
+
+- (void)changeLikedArray:(NSNotification *)noti {
+    int currIndex = [noti.userInfo[@"index"] intValue];
+    BOOL currLikeStatus = [self.likeStatus[currIndex] boolValue];
+    currLikeStatus ^= 1;
+    self.likeStatus[currIndex] = [NSNumber numberWithBool:currLikeStatus];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -114,14 +136,6 @@
     return cell;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return kScrollViewHeight;
-//}
-
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    self.pictureSlider = [YFSliderView sliderWithTableView:tableView];
-//    return self.pictureSlider;
-//}
 
 #pragma mark - scrollView delegate
 
@@ -146,7 +160,8 @@
     NSLog(@"select row %lu",indexPath.row);
     
     YFDetailArticleModel *detailArticle = [[YFDetailArticleModel alloc] initWithDict:self.detailArticleArray[indexPath.row]];
-    YFArticleViewController *detailArticleController = [[YFArticleViewController alloc] initWithDetailArticleModel:detailArticle];
+    detailArticle.index = (int)indexPath.row;
+    YFArticleViewController *detailArticleController = [[YFArticleViewController alloc] initWithDetailArticleModel:detailArticle andIsLiked:[self.likeStatus[indexPath.row] boolValue]];
 
 //    dispatch_async(dispatch_get_main_queue(), ^{
 //        [self presentViewController:detailArticleController animated:YES completion:nil];

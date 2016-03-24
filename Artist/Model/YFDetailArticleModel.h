@@ -12,6 +12,7 @@
 @property (nonatomic,copy) NSString *topImage;
 @property (nonatomic,copy) NSString *title;
 @property (nonatomic,copy) NSString *body;
+@property (nonatomic,assign) int index;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 + (instancetype)detailArticleWithDict:(NSDictionary *)dict;

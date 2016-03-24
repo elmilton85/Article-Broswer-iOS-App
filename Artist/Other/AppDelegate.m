@@ -19,6 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
     /** 
      Since I don't use a xib to initial the rootViewController, it will automatically do
      rootViewController.view = [[UIView alloc] init]
@@ -28,6 +30,8 @@
     naviController.navigationBarHidden = YES;
     
     self.window.rootViewController = naviController;
+    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
