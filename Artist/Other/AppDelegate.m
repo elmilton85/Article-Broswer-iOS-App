@@ -31,6 +31,8 @@
     
     self.window.rootViewController = naviController;
     
+    [NSThread sleepForTimeInterval:2.0];
+    
     [self.window makeKeyAndVisible];
     
     return YES;
