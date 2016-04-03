@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LaunchImg" translatesAutoresizingMaskIntoConstraints="NO" id="37K-hz-oXR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="StartImg" translatesAutoresizingMaskIntoConstraints="NO" id="BoN-sw-DRP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="37K-hz-oXR" secondAttribute="trailing" constant="-20" id="7Sy-dd-U4Y"/>
-                            <constraint firstItem="37K-hz-oXR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="9Cm-QD-awI"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="37K-hz-oXR" secondAttribute="bottom" id="Dxr-Jo-bVz"/>
-                            <constraint firstItem="37K-hz-oXR" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="Ehl-2B-bGI"/>
+                            <constraint firstItem="BoN-sw-DRP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="ZZj-vY-ppO"/>
+                            <constraint firstItem="BoN-sw-DRP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="pNO-aE-Nzz"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="BoN-sw-DRP" secondAttribute="bottom" id="r4H-O6-0BW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BoN-sw-DRP" secondAttribute="trailing" constant="-20" id="xr9-1Y-BwN"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchImg" width="1080" height="1920"/>
+        <image name="StartImg" width="1080" height="1920"/>
     </resources>
 </document>
